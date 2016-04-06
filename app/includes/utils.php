@@ -111,7 +111,11 @@ class Main
     protected function __construct($class, $fnc)
     {
         try {
-            validateRol($this->permisssions[$class][$fnc]);
+
+            if($this->permisssions[$class][$fnc] > -1){
+                checkSecurity();
+                validateRol($this->permisssions[$class][$fnc]);
+            }
         } catch (Exception $e) {
             echo 'Caught exception: ', $e->getMessage(), "\n";
         }

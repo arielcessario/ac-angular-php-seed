@@ -6,8 +6,26 @@
         [ng-cloak] {
             display: none;
         }
-    </style>
 
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #upper-bar{
+            flex: 1;
+        }
+        #nav-bar{
+            flex: 1;
+        }
+        #view{
+            flex: 6;
+        }
+        #footer-bar{
+            flex: 2;
+        }
+    </style>
     <script>
         // include angular loader, which allows the files to load in any order
         //@@NG_LOADER_START@@
@@ -111,8 +129,7 @@
                 }
         );
     </script>
-    <title>My AngularJS App</title>
-
+    <title>AC Angular Seed</title>
     <script>
         var cb = function () {
             var l = document.createElement('link');
@@ -126,12 +143,17 @@
         if (raf) raf(cb);
         else window.addEventListener('load', cb);
     </script>
+
 </head>
 <body ng-cloak ng-controller="AppCtrl as appCtrl">
+<div id="upper-bar">
+    <button ng-click="appCtrl.get();">Get</button>
+    <button ng-click="appCtrl.post();">Post</button>
+</div>
+<div id="nav-bar"></div>
+<div ng-view id="view"></div>
+<div id="footer-bar"></div>
 
-<button ng-click="appCtrl.get();">Get</button>
-<button ng-click="appCtrl.post();">Post</button>
-<div ng-view></div>
 
 </body>
 </html>
