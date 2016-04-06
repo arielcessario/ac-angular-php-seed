@@ -127,9 +127,10 @@
         else window.addEventListener('load', cb);
     </script>
 </head>
-<body ng-cloak>
+<body ng-cloak ng-controller="AppCtrl as appCtrl">
 
-
+<button ng-click="appCtrl.get();">Get</button>
+<button ng-click="appCtrl.post();">Post</button>
 <div ng-view></div>
 
 </body>
