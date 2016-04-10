@@ -12,7 +12,9 @@ $jwt_enabled = true;
 // Carpeta de imágenes
 $image_path = "../../images/";
 // MyDBi
-require_once 'MyDBi.php';
+
+
+require_once 'MysqliDb.php';
 
 /* @name: checkSecurity
  * @param
@@ -21,7 +23,8 @@ require_once 'MyDBi.php';
 function checkSecurity()
 {
     $requestHeaders = apache_request_headers();
-    $authorizationHeader = $requestHeaders['Authorization'];
+    $authorizationHeader = isset($requestHeaders['Authorization']) ? $requestHeaders['Authorization'] : null;
+
 //    echo print_r(apache_request_headers());
 
 
@@ -71,7 +74,8 @@ function validateRol($requerido)
 
     $requestHeaders = apache_request_headers();
 
-    $authorizationHeader = $requestHeaders['Authorization'];
+    $authorizationHeader = isset($requestHeaders['Authorization']) ? $requestHeaders['Authorization'] : null;
+
 //    echo print_r(apache_request_headers());
 
 
@@ -103,8 +107,8 @@ class Main
 {
     public static $db;
     private $permisssions = array(
-        'Usuarios' => array('get' => 1, 'po' => 0)
-
+        'Usuarios' => array('get' => 1,
+            'po' => 0)
     );
 
 
@@ -112,15 +116,15 @@ class Main
     {
         try {
 
-            if($this->permisssions[$class][$fnc] > -1){
-                checkSecurity();
+            if ($this->permisssions[$class][$fnc] > -1) {
+//                checkSecurity();
                 validateRol($this->permisssions[$class][$fnc]);
             }
         } catch (Exception $e) {
             echo 'Caught exception: ', $e->getMessage(), "\n";
         }
-        if(!isset($this->db)){
-            $this->db = new MysqliDb();
+        if (!isset($this->db)) {
+            $this->db = new MysqliDb ('127.0.0.1', 'root', 'concentrador', 'arielces_bayres');
         }
     }
 }

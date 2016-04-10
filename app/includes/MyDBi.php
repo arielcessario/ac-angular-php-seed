@@ -12,7 +12,7 @@
  * @license   http://opensource.org/licenses/gpl-3.0.html GNU Public License
  * @version   2.0
  * */
-class MysqliDb
+class MysqliDbasfads
 {
 
     /**
