@@ -27,6 +27,8 @@
         }
     </style>
     <script>
+
+        window.installPath = 'bower_components';
         // include angular loader, which allows the files to load in any order
         //@@NG_LOADER_START@@
         // You need to run `npm run update-index-async` to inject the angular async code here
@@ -110,11 +112,12 @@
                         'bower_components/oclazyload/dist/ocLazyLoad.min.js',
                         'bower_components/angular-cookies/angular-cookies.min.js',
                         'bower_components/angular-animate/angular-animate.min.js',
-                        'bower_components/a0-angular-storage/dist/angular-storage.min.js',
+                        'https://cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.min.js',
                         '//cdn.auth0.com/js/lock-7.9.min.js',
                         '//cdn.auth0.com/w2/auth0-angular-4.min.js',
-                        'bower_components/angular-jwt/dist/angular-jwt.min.js',
-                        'bower_components/ac-angular-utils/ac-utils.js'
+                        'https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.min.js',
+                        'bower_components/ac-angular-utils/ac-utils.min.js',
+                        'bower_components/ac-angular-autocomplete/ac-autocomplete.min.js'
                     ], 'segundo');
 
 
@@ -147,8 +150,6 @@
 </head>
 <body ng-cloak ng-controller="AppCtrl as appCtrl">
 <div id="upper-bar">
-    <button ng-click="appCtrl.get();">Get</button>
-    <button ng-click="appCtrl.post();">Post</button>
 </div>
 <div id="nav-bar"></div>
 <div ng-view id="view"></div>

@@ -9,7 +9,8 @@
         'angular-storage',
         'angular-jwt',
         'auth0',
-        'acUtils'
+        'acUtils',
+        'acAutocomplete'
     ]).config(['$routeProvider', function ($routeProvider) {
             $routeProvider.otherwise({redirectTo: '/view1'});
         }])
@@ -18,28 +19,7 @@
     AppCtrl.$inject = ['$http'];
     function AppCtrl($http) {
         var vm = this;
-        vm.get = function () {
-            $http.get('usuarios.php?function=get')
-                .success(function (data) {
-                        console.log(data);
-                    }
-                )
-                .error(function (data) {
-                        console.log(data);
-                    }
-                );
-        };
-        vm.post = function () {
-            $http.post('usuarios.php',{'function':'post', 'param':'prueba'})
-                .success(function (data) {
-                        console.log(data);
-                    }
-                )
-                .error(function (data) {
-                        console.log(data);
-                    }
-                );
-        }
+
     }
 
 })();

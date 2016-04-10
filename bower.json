@@ -15,6 +15,7 @@
     "ac-angular-utils": "*",
     "angular-jwt": "^0.0.9",
     "a0-angular-storage": "^0.0.15",
-    "oclazyload": "^1.0.9"
+    "oclazyload": "^1.0.9",
+    "ac-angular-autocomplete": "*"
   }
 }
