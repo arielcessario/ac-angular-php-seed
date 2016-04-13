@@ -108,7 +108,11 @@ class Main
     public static $db;
     private $permisssions = array(
         'Usuarios' => array('get' => 1,
-            'po' => 0)
+            'login' => -1,
+            'logout' => -1,
+            'create' => 0,
+            'update' => 0
+        )
     );
 
 
@@ -117,7 +121,7 @@ class Main
         try {
 
             if ($this->permisssions[$class][$fnc] > -1) {
-//                checkSecurity();
+                checkSecurity();
                 validateRol($this->permisssions[$class][$fnc]);
             }
         } catch (Exception $e) {
