@@ -32,8 +32,8 @@
         }])
         .controller('AppCtrl', AppCtrl);
 
-    AppCtrl.$inject = ['$http'];
-    function AppCtrl($http) {
+    AppCtrl.$inject = [];
+    function AppCtrl() {
         var vm = this;
 
     }
