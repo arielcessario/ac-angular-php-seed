@@ -15,7 +15,8 @@ $serverName = 'serverName';
 $jwt_enabled = true;
 // Carpeta de imágenes
 $image_path = "../../images/";
-// MyDBi
+// Nivel de compresión de las imágenes
+$compression_level = 20;
 
 
 require_once 'MysqliDb.php';
