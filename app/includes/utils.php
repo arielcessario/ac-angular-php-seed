@@ -2,6 +2,7 @@
 
 ini_set('display_errors', '0');     # don't show any errors...
 error_reporting(E_ALL | E_STRICT);  # ...but do log them
+require "jwt_helper.php";
 
 // JWT Secret Key
 //$secret = base64_encode('asdfwearsadfasdareasdfaeasdfaefawasadf');
