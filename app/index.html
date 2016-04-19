@@ -21,6 +21,7 @@
         }
         #view{
             flex: 6;
+            overflow-x: hidden;
         }
         #footer-bar{
             flex: 2;
@@ -147,6 +148,7 @@
         if (raf) raf(cb);
         else window.addEventListener('load', cb);
     </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 <body ng-cloak ng-controller="AppCtrl as appCtrl">
